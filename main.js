@@ -12,15 +12,21 @@ function initializeApp(){
 
 function card_clicked(){
     // console.log("handle click ran")
-    $(this).find($('.back')).hide();
     if(first_card_clicked !== null && second_card_clicked !== null) {
         return;
     }
+    if($(this).hasClass('clicked')) {
+        return;
+    }
+    $(this).find($('.back')).hide();
+
     if (first_card_clicked === null) {
         first_card_clicked = this;
+        $(first_card_clicked).addClass('clicked');
         return
     } else {
         second_card_clicked = this;
+        $(second_card_clicked).addClass('clicked');
         var first_card_image_source = $(first_card_clicked).find('.front > img').attr('src');
         console.log('first card:', first_card_image_source);
         var second_card_image_source = $(second_card_clicked).find('.front > img').attr('src');
@@ -31,7 +37,9 @@ function card_clicked(){
             first_card_clicked = null;
             second_card_clicked = null;
             if (match_counter === total_possible_matches) {
-                alert('You win!');
+                setTimeout(function() {
+                    alert('You win!');
+                },500);
             } else {
                 return;
             }
@@ -39,6 +47,9 @@ function card_clicked(){
             setTimeout(function () {
                 $(first_card_clicked).find($('.back')).show();
                 $(second_card_clicked).find($('.back')).show();
+                $(first_card_clicked).removeClass('clicked');
+                $(second_card_clicked).removeClass('clicked');
+
                 first_card_clicked = null;
                 second_card_clicked = null;
 
