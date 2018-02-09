@@ -1,0 +1,165 @@
+/*!*.header_container {*!*/
+    /*!*background-color: black;*!*/
+    /*!*height: 50vh;*!*/
+    /*!*width: 100vw;*!*/
+/*!*}*!*/
+
+
+html, html >* {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body > * {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.header_container {
+    background-color: black;
+    height: 25%;
+    width: 100%;
+    text-align:center;
+}
+
+#namaslay {
+    color: deeppink;
+    font-family: "Jenna Sue";
+    font-size: 10vh;
+    text-align: center;
+    margin-top:0;
+    padding-top: 50px;
+}
+
+#slay {
+    color: deeppink;
+    font-family: Helvetica;
+    font-size: 4vh;
+    text-align: center;
+}
+
+ul {
+    color: deeppink;
+    font-family: Helvetica;
+    font-size: 2vh;
+}
+
+ul li {
+    width: 10%;
+    display: inline-block;
+}
+
+#image_div {
+    width: 40%;
+    margin: 0 auto;
+}
+
+
+#image-header {
+    width: 100%;
+    text-align: center;
+}
+
+.stats_container {
+    background-color: lightpink;
+    display: inline-block;
+    height: 75vh;
+    width:20%;
+    vertical-align: top;
+}
+
+.game_container {
+    background-color: deeppink;
+    display: inline-block;
+    height: 75vh;
+    width: 80%;
+}
+#game-area{
+    height: 100%;
+}
+.card {
+    width: 16.6%;
+    position: relative;
+    height: 33%
+}
+
+.front, .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+}
+
+.front{
+    background-image: url(images/card1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.hidden > .back{
+    display: none;
+}
+
+
+
+
+
+
+/*#logo {*/
+    /*height: 20vh;*/
+/*}*/
+
+/*.container {*/
+    /*height: 100vh;*/
+    /*width: 100vw;*/
+    /*background-color: deeppink;*/
+    /*/*display:flex;*/*/
+/*}*/
+
+
+/*#namaslay {*/
+    /*color:  deeppink;*/
+    /*font-family: "Jenna Sue", sans-serif;*/
+    /*font-size: 4em;*/
+    /*text-align: center;*/
+    /*position: relative;*/
+    /*bottom: 73%;*/
+/*}*/
+
+/*#slay {*/
+    /*color: deeppink;*/
+    /*font-family: "Jenna Sue", sans-serif;*/
+    /*font-size: 4em;*/
+    /*text-align: center;*/
+    /*position: relative;*/
+    /*bottom: 43%;*/
+/*}*/
+
+/*.header {*/
+    /*background-color: black;*/
+    /*height: 30%;*/
+    /*width: 100%;*/
+    /*margin: 0px;*/
+    /*text-align:center;*/
+/*}*/
+
+/*body {*/
+    /*margin: 0px;*/
+/*}*/
+/*.stats_container{*/
+    /*height:70%;*/
+    /*width:25%;*/
+/*}*/
+/*.game_container{*/
+    /*height:70%;*/
+    /*width:75%;*/
+    /*display: flex;*/
+/*}*/
