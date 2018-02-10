@@ -11,6 +11,11 @@ html, html >* {
     padding: 0;
 }
 
+body {
+    width:100vw;
+    height: 100vh;
+}
+
 body > * {
     margin: 0;
     font-size: 1rem;
@@ -29,6 +34,8 @@ body > * {
     font-size: 10vh;
     text-align: center;
     margin-top:0;
+    position: relative;
+    bottom: 10%;
     padding-top: 50px;
 }
 
@@ -45,73 +52,73 @@ ul {
     font-size: 2vh;
 }
 
-ul li {
-    width: 10%;
+.image_div {
+    width: 22.5%;
+    height: 100%;
     display: inline-block;
-}
-
-#image_div {
-    width: 40%;
     margin: 0 auto;
 }
 
+.logo {
+    width: 55%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+}
 
-#image-header {
-    width: 100%;
+.image-header {
+    width: 68%;
     text-align: center;
 }
 
 .stats_container {
     background-color: lightpink;
     display: inline-block;
-    height: 75vh;
-    width:20vw;
+    height: 75%;
+    width:20%;
     vertical-align: top;
 }
 
 .game_container {
     background-color: deeppink;
-    display: inline-block;
-    height: 75vh;
+    display: inline-flex;
+    height: 75%;
     width: 80%;
 }
 
-#game-area{
+#game-area {
     height: 100%;
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
     align-content: space-around;
+    width: 83%;
+    margin: auto;
 }
 
 .card {
-    width: 8vw;
+    margin: 1% 2.5%;
+    width: 10.5%;
     position: relative;
-    height: 33%;
-    display: inline-block;
+    height: 28%;
+    display: flex;
+    /* display: inline-block; */
 }
 
 .front, .back {
-    height: auto;
+    height: 100%;
     width: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    display:inline-block;
 }
 
 .card img{
 
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 
-/*.front{*/
-    /*background-image: url(images/card1.png);*/
-    /*background-size: cover;*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: center;*/
-/*}*/
 
 .hidden > .back{
     display: none;
