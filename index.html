@@ -41,11 +41,12 @@
             <div class="label">Accuracy</div>
             <div class="value"></div>
         </div>
-        <button class="reset">Reset Game</button>
+        <button class="reset" onclick="reset_button_clicked()">Reset Game</button>
     </aside>
 
     <main class="game_container">
         <div id="game-area">
+
             <div class="card">
                 <div class="front">
                     <img src="images/card1.png" alt="armup">
@@ -64,130 +65,131 @@
             </div>
             <div class="card">
                 <div class="front">
-                    <img src="images/sitdown.png" alt="sitdown">                </div>
+                    <img src="images/card6.png" alt="sitdown">
+                </div>
                 <div class="back">
                     <img src="images/cardback.png" alt="cardback">
                 </div>
             </div>
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/sitdown.png" alt="sitdown">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/tree.png" alt="tree">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/fourleg.png" alt="fourleg">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/pray.png" alt="pray">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/back.png" alt="back">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="card">-->
-                <!--<div class="front">-->
-                    <!--<img src="images/camel.png" alt="camel">-->
-                <!--</div>-->
-                <!--<div class="back">-->
-                    <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="card">-->
-            <!--<div class="front">-->
-                <!--<img src="" alt="">-->
-            <!--</div>-->
-            <!--<div class="back">-->
-                <!--<img src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="">-->
-            <!--</div>-->
-        <!--</div>-->
+            <div class="card">
+                <div class="front">
+                    <img src="images/card9.png" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="images/card3.png" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="images/card7.png" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="images/card4" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="images/card5.png" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="images/card2.png" alt="card front">
+                </div>
+                <div class="back">
+                    <img src="images/cardback.png" alt="card back">
+                </div>
+            </div>
+            <div class="front">
+                <img src="card8" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card3" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card7.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card4.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card1.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card6.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card5.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card9.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/card2.png" alt="card front">
+            </div>
+            <div class="back">
+                <img src="images/cardback.png" alt="card back">
+            </div>
+        </div>
         </div>
     </main>
 </body>

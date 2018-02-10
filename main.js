@@ -1,13 +1,20 @@
 $(document).ready(initializeApp);
 
+
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 1;
 var match_counter = 0;
+var matches = 0;
+var attempts = 0;
+var accuracy = 0;
+var games_played = 0;
+
 
 function initializeApp(){
     // $(".card").click(handleClick);
     $('.card').on('click', card_clicked);
+    $('.reset').on('click', reset_button_clicked);
 }
 
 function card_clicked(){
@@ -56,5 +63,25 @@ function card_clicked(){
             },2000)
         }
     }
+}
+
+function display_stats() {
+    $('.games-played .value').text(games_played);
+    $('.attempts .value').text(attempts);
+    accuracy = (matches/attempts * 100).toFixed(2) + ' %';
+    $('.accuracy .value').text(accuracy);
+}
+
+function reset_stats() {
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    display_stats();
+}
+
+function reset_button_clicked() {
+    games_played++;
+    reset_stats();
+    $('.card').find('.back').show();
 }
 
