@@ -3,10 +3,10 @@ $(document).ready(initializeApp);
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 1;
+var total_possible_matches = 9;
 var match_counter = 0;
 var matches = 0;
-var attempts = 0;
+var attempts = 0 ;
 var accuracy = 0;
 var games_played = 0;
 
@@ -15,6 +15,7 @@ function initializeApp(){
     // $(".card").click(handleClick);
     $('.card').on('click', card_clicked);
     $('.reset').on('click', reset_button_clicked);
+    display_stats();
 }
 
 function card_clicked(){
@@ -32,6 +33,8 @@ function card_clicked(){
         $(first_card_clicked).addClass('clicked');
         return
     } else {
+
+        attempts = attempts + 1;
         second_card_clicked = this;
         $(second_card_clicked).addClass('clicked');
         var first_card_image_source = $(first_card_clicked).find('.front > img').attr('src');
@@ -40,6 +43,7 @@ function card_clicked(){
         console.log(second_card_image_source)
         if (first_card_image_source === second_card_image_source) {
             match_counter++;
+            accuracy = match_counter/attempts;
             console.log(match_counter);
             first_card_clicked = null;
             second_card_clicked = null;
@@ -62,21 +66,22 @@ function card_clicked(){
 
             },2000)
         }
+        display_stats();
     }
 }
 
 function display_stats() {
     $('.games-played .value').text(games_played);
     $('.attempts .value').text(attempts);
-    accuracy = (matches/attempts * 100).toFixed(2) + ' %';
-    $('.accuracy .value').text(accuracy);
+    accuracy = parseFloat(accuracy * 100).toFixed(2);
+    $('.accuracy .value').text(accuracy + "%");
 }
 
 function reset_stats() {
+    display_stats();
     accuracy = 0;
     matches = 0;
     attempts = 0;
-    display_stats();
 }
 
 function reset_button_clicked() {
