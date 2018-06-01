@@ -108,7 +108,6 @@ function Game(){
         $('.modal').toggleClass("hide");
         $('.shadowBox').toggleClass("hide");
         console.log('modal works');
-
     }
     this.display_stats = function(){
         $('.games-played .value').text(this.games_played);
