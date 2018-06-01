@@ -1,192 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Namaslay</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src ="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="main.js"></script>
 </head>
-
-<body>
-    <header class="header_container">
-        <div class="image_div">
-            <img class="image-header" src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="header image">
-        </div>
-        <div class="logo">
-            <div id="namaslay">NAMASLAY</div>
-            <div id="slay">The slay in me, recognizes the slay in you.</div>
-        </div>
-        <div class="image_div">
-            <img class="image-header" src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="header image">
-            <a id="about" href="about.html">About Me</a>
-        </div>
-    </header>
-
-    <aside class="stats_container">
-        <div class="games-played">
-            <div class="label">Games Played</div>
-            <div class="value"></div>
-        </div>
-        <div class="attempts">
-            <div class="label">Attempts</div>
-            <div class="value"></div>
-        </div>
-        <div class="accuracy">
-            <div class="label">Accuracy</div>
-            <div class="value"></div>
-        </div>
-        <button class="reset">Reset Game</button>
-    </aside>
-
-    <main class="game_container">
-        <div id="game-area">
-
-            <div class="card">
-                <div class="front">
-                    <img src="images/card8.png" alt="armup">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="cardback">
+    <body>
+        <div class="grid-container">
+            <div class="header">
+                <div class="flex-container">
+                    <div><img class="image-header" src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="header image"></div>
+                    <div>
+                        <div id="namaslay">NAMASLAY</div>
+                        <div id="slay">The slay in me, recognizes the slay in you.</div>
+                    </div>
+                    <div>
+                        <img class="image-header" src="http://www.forteyoga.com/wp-content/uploads/2015/04/Reverse-Prayer-Pose.png" alt="header image">
+                    </div>  
                 </div>
             </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card1.png" alt="armup">
+            <div class="sidebar sidebar-container">
+                <div class="games-played">
+                    <div class="label">Games Played</div>
+                    <div class="value">0</div>
                 </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="cardback">
+                <div class="attempts">
+                    <div class="label">Attempts</div>
+                    <div class="value">0</div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card6.png" alt="sitdown">
+                <div class="accuracy">
+                    <div class="label">Accuracy</div>
+                    <div class="value">0</div>
                 </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="cardback">
+                <div class="reset">
+                    <button>Reset Game</button>
                 </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card9.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
+                <div>
+                    <a id="about" href="about.html">About Me</a>
                 </div>
             </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card3.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card7.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card4.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card5.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card2.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card8.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card3.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card7.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card4.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card1.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card6.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card5.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card9.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-            <div class="card">
-                <div class="front">
-                    <img src="images/card2.png" alt="card front">
-                </div>
-                <div class="back">
-                    <img src="images/cardback.png" alt="card back">
-                </div>
-            </div>
-        </div>
-    </main>
-</body>
+            <div class="main">
+            </div>   
+        </div>   
+        <div class="modal hide">
+            <h1>Test</h1>
+            <button onclick="game.toggleModal()">Close Dat Biz</button>
+        </div>     
+        <div class="shadowBox hide"></div>
+    </body>
 </html>
+        
