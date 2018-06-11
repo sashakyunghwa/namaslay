@@ -78,7 +78,6 @@
 .front > img, .back > img {
     height: 100%;
     margin: auto;
-    max-width: 100%;
     display: block;
 }
 
