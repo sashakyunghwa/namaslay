@@ -60,7 +60,7 @@ function Game(){
             var cardDiv = $("<div>").addClass('card');
             cardDiv.append(frontDiv, backDiv);
         
-            $('.main').append(cardDiv); 
+            $('.game-area').append(cardDiv); 
         }
     }
     this.card_clicked = function(event){
