@@ -88,7 +88,8 @@ function Game(){
                 this.second_card_clicked = null;
                 if (this.match_counter === this.total_possible_matches) {
                     setTimeout(function() {
-                        $('.container').toggleClass("hide");
+                        $('.modal').removeClass("hide");
+                        $('.shadowBox').removeClass("hide");
                     },500);
                 } 
             } else {
