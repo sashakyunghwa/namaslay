@@ -1,60 +1,136 @@
-$(document).ready(initializeApp);
+$(document).ready(initializeGame);
+var game;
 
-var first_card_clicked = null;
-var second_card_clicked = null;
-var total_possible_matches = 1;
-var match_counter = 0;
-
-function initializeApp(){
-    // $(".card").click(handleClick);
-    $('.card').on('click', card_clicked);
+function initializeGame(){
+    game = new Game();
 }
 
-function card_clicked(){
-    // console.log("handle click ran")
-    if(first_card_clicked !== null && second_card_clicked !== null) {
-        return;
+function Game(){
+    this.imageArray = [
+        "./images/card1.png",
+        "./images/card2.png",
+        "./images/card3.png",
+        "./images/card4.png",
+        "./images/card5.png",
+        "./images/card6.png",
+        "./images/card7.png",
+        "./images/card8.png",
+        "./images/card9.png",
+        "./images/card1.png",
+        "./images/card2.png",
+        "./images/card3.png",
+        "./images/card4.png",
+        "./images/card5.png",
+        "./images/card6.png",
+        "./images/card7.png",
+        "./images/card8.png",
+        "./images/card9.png"
+    ];
+    this.first_card_clicked = null;
+    this.second_card_clicked = null;
+    this.match_counter = 0;
+    this.total_possible_matches = 9;
+    this.games_played = 0;
+    this.attempts = 0 ;
+    this.accuracy = 0;
+    this.initialize = function(){
+        this.shuffleCards();
+        this.makeCardsOnDom();
+        $('.card').on('click', this.card_clicked.bind(this));
+        $('#reset').on('click', this.reset_button_clicked.bind(this));
     }
-    if($(this).hasClass('clicked')) {
-        return;
-    }
-    $(this).find($('.back')).hide();
-
-    if (first_card_clicked === null) {
-        first_card_clicked = this;
-        $(first_card_clicked).addClass('clicked');
-        return
-    } else {
-        second_card_clicked = this;
-        $(second_card_clicked).addClass('clicked');
-        var first_card_image_source = $(first_card_clicked).find('.front > img').attr('src');
-        console.log('first card:', first_card_image_source);
-        var second_card_image_source = $(second_card_clicked).find('.front > img').attr('src');
-        console.log(second_card_image_source)
-        if (first_card_image_source === second_card_image_source) {
-            match_counter++;
-            console.log(match_counter);
-            first_card_clicked = null;
-            second_card_clicked = null;
-            if (match_counter === total_possible_matches) {
-                setTimeout(function() {
-                    alert('You win!');
-                },500);
-            } else {
-                return;
-            }
-        } else {
-            setTimeout(function () {
-                $(first_card_clicked).find($('.back')).show();
-                $(second_card_clicked).find($('.back')).show();
-                $(first_card_clicked).removeClass('clicked');
-                $(second_card_clicked).removeClass('clicked');
-
-                first_card_clicked = null;
-                second_card_clicked = null;
-
-            },2000)
+    this.shuffleCards = function(){
+        for(var i = this.imageArray.length - 1; i > 0; i--){
+            var randomCardIndex = Math.floor(Math.random() * (i + 1));
+            var temp = this.imageArray[i];
+            this.imageArray[i] = this.imageArray[randomCardIndex];
+            this.imageArray[randomCardIndex] = temp;
         }
     }
+    this.makeCardsOnDom = function(){
+        for(var i = 0; i < this.imageArray.length; i++){
+            var frontImage = $("<img>").attr("src", this.imageArray[i]);
+            var frontDiv = $('<div>').addClass('front');
+            frontDiv.append(frontImage);
+        
+            var backImage = $("<img>").attr("src", "images/cardback.png");
+            var backDiv = $('<div>').addClass('back');
+            backDiv.append(backImage);
+        
+            var cardDiv = $("<div>").addClass('card');
+            cardDiv.append(frontDiv, backDiv);
+        
+            $('.game-area').append(cardDiv); 
+        }
+    }
+    this.card_clicked = function(event){
+        console.log("handle click ran")
+        if(this.first_card_clicked !== null && this.second_card_clicked !== null) {
+            return;
+        }
+        if($(event.currentTarget).hasClass('clicked')) {
+            return;
+        }
+        $(event.currentTarget).find($('.back')).hide();
+        if (this.first_card_clicked === null) {
+            this.first_card_clicked = event.currentTarget;
+            $(this.first_card_clicked).addClass('clicked');
+            return;
+        } else {
+            this.attempts++;
+            this.second_card_clicked = event.currentTarget;
+            $(this.second_card_clicked).addClass('clicked');
+            var first_card_image_source = $(this.first_card_clicked).find('.front > img').attr('src');
+            var second_card_image_source = $(this.second_card_clicked).find('.front > img').attr('src');
+            if (first_card_image_source === second_card_image_source) {
+                this.match_counter++;
+                this.first_card_clicked = null;
+                this.second_card_clicked = null;
+                if (this.match_counter === this.total_possible_matches) {
+                    setTimeout(function() {
+                        $('.modal').removeClass("hide");
+                        $('.shadowBox').removeClass("hide");
+                    },500);
+                } 
+            } else {
+                setTimeout((function(){
+                    $(this.first_card_clicked).find($('.back')).show();
+                    $(this.second_card_clicked).find($('.back')).show();
+                    $(this.first_card_clicked).removeClass('clicked');
+                    $(this.second_card_clicked).removeClass('clicked');
+                    this.first_card_clicked = null;
+                    this.second_card_clicked = null;
+                }).bind(this), 1500)
+            }
+        }
+        this.display_stats();
+    }
+    this.toggleModal = function(){
+        $('.modal').toggleClass("hide");
+        $('.shadowBox').toggleClass("hide");
+        console.log('modal works');
+    }
+    this.display_stats = function(){
+        $('.games-played .value').text(this.games_played);
+        $('.attempts .value').text(this.attempts);
+        this.accuracy = (this.match_counter/this.attempts * 100).toFixed(2) + "%";
+        $('.accuracy .value').text(this.accuracy);
+    }
+    this.reset_stats = function(){
+        this.match_counter = 0;
+        this.attempts = 0;
+        this.accuracy = 0;
+        this.display_stats();
+        $('.accuracy .value').text(0);
+    }
+    this.reset_button_clicked = function(){
+        this.games_played++;
+        this.reset_stats();
+        $('.card').find('.back').show();
+    }
+    this.initialize();
 }
+
+
+
 
