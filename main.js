@@ -37,7 +37,7 @@ function Game(){
         this.shuffleCards();
         this.makeCardsOnDom();
         $('.card').on('click', this.card_clicked.bind(this));
-        $('.reset').on('click', this.reset_button_clicked.bind(this));
+        $('#reset').on('click', this.reset_button_clicked.bind(this));
     }
     this.shuffleCards = function(){
         for(var i = this.imageArray.length - 1; i > 0; i--){
