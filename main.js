@@ -1,10 +1,14 @@
+// loads the game when the document is ready
 $(document).ready(initializeGame);
+// stores the new Game constructor
 var game;
 
+// this starts the game
 function initializeGame(){
     game = new Game();
 }
 
+// creates a new Game instance
 function Game(){
     this.imageArray = [
         "./images/card1.png",
