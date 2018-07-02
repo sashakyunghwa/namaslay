@@ -4,7 +4,7 @@ Yoga themed memory match game with user-determined features and live-updating st
 
 http://www.sashakyunghwa.com/namaslay
 
-<img src="https://raw.githubusercontent.com/sashakyunghwa/namaslay/master/images/namaslay.png>
+<img src="https://raw.githubusercontent.com/sashakyunghwa/namaslay/master/images/namaslay.png">
 
 Things Learned:
 - How to use Javascript OOP to organize my code
