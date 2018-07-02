@@ -37,7 +37,7 @@ function Game(){
         this.shuffleCards();
         this.makeCardsOnDom();
         $('.card').on('click', this.card_clicked.bind(this));
-        $('.reset').on('click', this.reset_button_clicked.bind(this));
+        $('#reset').on('click', this.reset_button_clicked.bind(this));
     }
     this.shuffleCards = function(){
         for(var i = this.imageArray.length - 1; i > 0; i--){
@@ -60,7 +60,7 @@ function Game(){
             var cardDiv = $("<div>").addClass('card');
             cardDiv.append(frontDiv, backDiv);
         
-            $('.main').append(cardDiv); 
+            $('.game-area').append(cardDiv); 
         }
     }
     this.card_clicked = function(event){
@@ -88,7 +88,8 @@ function Game(){
                 this.second_card_clicked = null;
                 if (this.match_counter === this.total_possible_matches) {
                     setTimeout(function() {
-                        $('.container').toggleClass("hide");
+                        $('.modal').removeClass("hide");
+                        $('.shadowBox').removeClass("hide");
                     },500);
                 } 
             } else {
