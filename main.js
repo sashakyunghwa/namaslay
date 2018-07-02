@@ -42,6 +42,10 @@ function Game(){
         this.makeCardsOnDom();
         $('.card').on('click', this.card_clicked.bind(this));
         $('#reset').on('click', this.reset_button_clicked.bind(this));
+        $('.fas').on('click', this.hideModal.bind(this));
+        $('#namaplay').on('click', this.hideModal.bind(this));
+        $('#namaplay').on('click', this.reset_button_clicked.bind(this));
+        $('.shadowBox').on('click', this.hideModal.bind(this));
     }
     this.shuffleCards = function(){
         for(var i = this.imageArray.length - 1; i > 0; i--){
@@ -52,6 +56,7 @@ function Game(){
         }
     }
     this.makeCardsOnDom = function(){
+        $('.game-area').empty();
         for(var i = 0; i < this.imageArray.length; i++){
             var frontImage = $("<img>").attr("src", this.imageArray[i]);
             var frontDiv = $('<div>').addClass('front');
@@ -91,10 +96,7 @@ function Game(){
                 this.first_card_clicked = null;
                 this.second_card_clicked = null;
                 if (this.match_counter === this.total_possible_matches) {
-                    setTimeout(function() {
-                        $('.modal').removeClass("hide");
-                        $('.shadowBox').removeClass("hide");
-                    },500);
+                    setTimeout(this.showModal, 500);
                 } 
             } else {
                 setTimeout((function(){
@@ -109,9 +111,14 @@ function Game(){
         }
         this.display_stats();
     }
-    this.toggleModal = function(){
-        $('.modal').toggleClass("hide");
-        $('.shadowBox').toggleClass("hide");
+    this.showModal = function(){
+        $('.modal').removeClass("hide");
+        $('.shadowBox').removeClass("hide");
+        console.log('modal works');
+    }
+    this.hideModal = function(){
+        $('.modal').addClass("hide");
+        $('.shadowBox').addClass("hide");
         console.log('modal works');
     }
     this.display_stats = function(){
@@ -124,6 +131,9 @@ function Game(){
         this.match_counter = 0;
         this.attempts = 0;
         this.accuracy = 0;
+        this.shuffleCards();
+        this.makeCardsOnDom();
+        $('.card').on('click', this.card_clicked.bind(this));
         this.display_stats();
         $('.accuracy .value').text(0);
     }
@@ -131,7 +141,15 @@ function Game(){
         this.games_played++;
         this.reset_stats();
         $('.card').find('.back').show();
+        $('.card').removeClass('clicked');
     }
+    this.namaplay_button_clicked = function(){
+        this.games_played++;
+        this.reset_stats();
+        $('.card').find('.back').show();
+        $('.card').removeClass('clicked');
+    }
+
     this.initialize();
 }
 

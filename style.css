@@ -30,7 +30,7 @@ body {
 }
 
 #namaslay {
-    font-family: jenna sue;
+    font-family: "jenna sue";
     font-size: 8vmin;
 }
 
@@ -184,6 +184,14 @@ body {
     margin: auto;
 }
 
+.flex-flow {
+    flex-flow: column wrap;
+}
+
+.flex-flow-div {
+    width: 100%;
+}
+
 .about-sidebar-links {
     height: 36%;
 }
@@ -215,6 +223,8 @@ body {
     align-items: center;
 }
 
+/* ===== Modal ===== */
+
 .modal {
     /* display: block; */
     position: fixed;
@@ -238,16 +248,40 @@ body {
     width: 100%;
 }
 
-#modal-text {
+.fas {
     color: deeppink;
-    text-align: center;
+    font-size: 8vmin;
+    padding: 5px 12px;
 }
+
+#modal_text {
+    color: deeppink;
+    font-size: 9vmin;
+    padding: 5px 10px;
+    text-align: center;
+
+}
+
+/* #modal_span_text{
+    font-family: 'Jenna Sue';
+    font-size: 12vmin;
+} */
 
 #namaplay {
-    color: deeppink;
+    background-color: deeppink;
+    border: 0;
+    color: black;
+    font-size: 3vmin;
     text-align: center;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
 }
 
+.fas:hover, #namaplay:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
 
 .skills {
     display: inline-block;
@@ -324,10 +358,10 @@ body {
     .about-sidebar-links {
         height: auto;
     }
-
+/* 
     .about-sidebar div:first-child {
         width: 29%;
-    }
+    } */
 
     #about_image {
         width: auto;
