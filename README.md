@@ -4,6 +4,8 @@ Yoga themed memory match game with user-determined features and live-updating st
 
 http://www.sashakyunghwa.com/namaslay
 
+<img src="about.jpg">
+
 Things Learned:
 - How to use Javascript OOP to organize my code
 - How to use jQuery to manipulate the DOM
